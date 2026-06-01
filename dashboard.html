@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Two-Phase Immersion Cooling Market, 2025–2035 | Strategic Market Snapshot for GRC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chosen Palette: Deep Burgundy & Warm Neutrals (Burgundy #800020 / Tailwind rose-900, Stone background, Amber accents) -->
+    <!-- Application Structure Plan: A premium consulting-grade layout featuring a fixed left navigation for effortless scanning and a wide right content pane. Each section uses a grid to pair concise, hard-hitting strategic text with a data visualization or analytical table. This structure allows GRC executives to rapidly digest the commercial narrative, assess the quantified threat/opportunity of two-phase cooling, and jump directly to areas of competitive interest without losing context. -->
+    <!-- Visualization & Content Choices: 
+         1. Executive Snapshot: KPI Tiles (HTML/CSS) -> Quick sizing and CAGR context.
+         2. Market Forecast: Bar Chart (Chart.js) -> Shows aggressive growth curve.
+         3. Revenue Layer: Stacked Bar (Chart.js) -> Highlights shift from CAPEX to OPEX (fluid/service).
+         4. Applications: Horizontal Bar (Chart.js) -> Ranks AI/HPC dominance.
+         5. Regions: CSS Data-bar Table (HTML/CSS) -> Replaces maps (NO SVG) to show geographic concentration.
+         6. Installed Base: Dual Axis Line/Bar (Chart.js) -> Correlates volume growth with ASP compression.
+         7. Architecture Benchmark: Matrix Table (HTML) -> Direct comparison of 1-phase vs 2-phase vs DTC.
+         8. Adoption Barriers: Progress Bar Scorecard (HTML/CSS) -> Quantifies headwinds.
+         9. Value Chain: Analytical Table (HTML) -> Highlights profit pools.
+         10. Competitive Landscape: Grouped Table (HTML) -> Identifies direct threats vs peers.
+         11. Scenarios: Line Chart with interactive toggles (Chart.js/JS) -> Shows sensitivity to AI demand vs DTC substitution.
+         12. CTA: High-contrast block -> Drives full report purchase. 
+         Library/Method: Chart.js (Canvas), HTML/Tailwind. NO SVG/Mermaid used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafaf9; 
+            color: #1c1917; 
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+
+        .nav-link.active {
+            background-color: #881337; 
+            color: white;
+            font-weight: 600;
+            border-left: 4px solid #f59e0b; 
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th {
+            background-color: #f5f5f4;
+            color: #44403c;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 2px solid #d6d3d1;
+        }
+        
+        td {
+            padding: 12px 16px;
+            font-size: 0.875rem;
+            border-bottom: 1px solid #e7e5e4;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .consulting-card {
+            background: white;
+            border: 1px solid #e7e5e4;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            border-radius: 0.5rem;
+        }
+
+        .insight-text {
+            font-style: italic;
+            color: #57534e;
+            font-size: 0.875rem;
+            border-left: 3px solid #881337;
+            padding-left: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .data-bar-bg {
+            background-color: #f5f5f4;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .data-bar-fill {
+            background-color: #881337;
+            height: 100%;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col md:flex-row min-h-screen">
+
+    <nav class="w-full md:w-72 bg-white border-r border-stone-200 fixed md:h-screen z-20 overflow-y-auto flex flex-col shadow-lg md:shadow-none transition-all duration-300">
+        <div class="p-6 border-b border-stone-200 bg-rose-950 text-white">
+            <div class="text-xs font-bold tracking-widest text-rose-300 uppercase mb-1">Sample Report</div>
+            <h1 class="text-lg font-bold leading-tight">Global Two-Phase Immersion Cooling Market</h1>
+            <div class="text-sm mt-2 text-rose-200 font-medium">Strategic Snapshot for GRC</div>
+        </div>
+        <div class="flex-1 py-4 flex flex-col gap-1 px-3 text-sm text-stone-600" id="nav-menu">
+            <a href="#sec-1" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">1. Executive Snapshot</a>
+            <a href="#sec-2" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">2. Market Size Forecast</a>
+            <a href="#sec-3" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">3. Revenue Layer Split</a>
+            <a href="#sec-4" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">4. Application Opportunity</a>
+            <a href="#sec-5" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">5. Regional Heatmap</a>
+            <a href="#sec-6" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">6. Installed Base Momentum</a>
+            <a href="#sec-7" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">7. Architecture Benchmark</a>
+            <a href="#sec-8" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">8. Adoption Barrier Scorecard</a>
+            <a href="#sec-9" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">9. Value Chain & Profit Pools</a>
+            <a href="#sec-10" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">10. Competitive Landscape</a>
+            <a href="#sec-11" class="nav-link block px-3 py-2.5 rounded-md hover:bg-stone-100 transition-colors">11. Scenario Forecast</a>
+            <a href="#sec-12" class="block px-3 py-2.5 mt-4 rounded-md bg-rose-900 text-white font-medium text-center hover:bg-rose-800 transition-colors">Access Full Report</a>
+        </div>
+    </nav>
+
+    <main class="flex-1 md:ml-72 p-4 md:p-10 lg:p-16 w-full max-w-7xl">
+        
+        <header class="mb-16">
+            <h2 class="text-4xl font-bold text-stone-900 mb-4 tracking-tight">Global Two-Phase Immersion Cooling Market, 2025–2035</h2>
+            <div class="h-1 w-24 bg-rose-900 mb-6"></div>
+            <p class="text-xl text-stone-700 font-medium leading-relaxed max-w-4xl">
+                Two-phase immersion cooling is technically powerful but commercially selective. Its strongest opportunity lies in extreme-density AI/HPC and selected high-performance data-center use cases, while adoption will depend on dielectric fluid economics, serviceability, customer confidence, OEM alignment, and competition from direct-to-chip and single-phase immersion cooling.
+            </p>
+        </header>
+
+        <section id="sec-1" class="mb-20 scroll-mt-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-rose-950 mb-2">1. Executive Market Snapshot</h3>
+                <p class="text-stone-600">High-level quantitative baseline establishing the commercial reality of the two-phase market.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="consulting-card p-6 border-t-4 border-t-rose-900">
+                    <div class="text-xs text-stone-500 font-bold uppercase tracking-wider mb-1">Base Market (2025)</div>
+                    <div class="text-3xl font-bold text-stone-900">USD $85 Mn</div>
+                    <div class="mt-2 text-sm text-stone-600">Initial commercial scaling phase driven by specialized pilots.</div>
+                </div>
+                <div class="consulting-card p-6 border-t-4 border-t-rose-900">
+                    <div class="text-xs text-stone-500 font-bold uppercase tracking-wider mb-1">Forecast Market (2035)</div>
+                    <div class="text-3xl font-bold text-stone-900">USD $1.25 Bn</div>
+                    <div class="mt-2 text-sm text-stone-600">Base-case scenario capturing dense AI/HPC deployments.</div>
+                </div>
+                <div class="consulting-card p-6 border-t-4 border-t-rose-900">
+                    <div class="text-xs text-stone-500 font-bold uppercase tracking-wider mb-1">10-Year CAGR</div>
+                    <div class="text-3xl font-bold text-stone-900">30.8%</div>
+                    <div class="mt-2 text-sm text-stone-600">Reflects high growth from a highly niche baseline.</div>
+                </div>
+                <div class="consulting-card p-6 border-t-4 border-t-rose-900">
+                    <div class="text-xs text-stone-500 font-bold uppercase tracking-wider mb-1">Dominant Application</div>
+                    <div class="text-3xl font-bold text-stone-900">AI / HPC</div>
+                    <div class="mt-2 text-sm text-stone-600">Contributes ~39% of total market revenue by 2035.</div>
+                </div>
+            </div>
+            <p class="insight-text">The market is expected to scale aggressively in percentage terms, but absolute revenue remains concentrated. Two-phase cooling acts as a specialized overlay rather than a universal data center replacement, competing intensely for high-density footprints.</p>
+        </section>
+
+        <section id="sec-2" class="mb-20 scroll-mt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-bold text-rose-950 mb-4">2. Global Market Size Forecast, 2025–2035</h3>
+                    <p class="text-stone-700 mb-4">The global forecast validates the transition from early pilot programs to targeted commercial deployment. Growth is primarily bottlenecked by fluid availability, cost, and the aggressive parallel rise of direct-to-chip alternatives.</p>
+                    <div class="consulting-card p-4">
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="font-semibold">2025 Base</td><td class="text-right">USD $85 Mn</td></tr>
+                                <tr><td class="font-semibold">2030 Mid-Point</td><td class="text-right">USD $410 Mn</td></tr>
+                                <tr><td class="font-semibold">2035 Projection</td><td class="text-right font-bold text-rose-900">USD $1,250 Mn</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 consulting-card p-6">
+                    <div class="chart-container">
+                        <canvas id="chartMarketSize"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p class="insight-text">Commercial relevance is concentrated post-2028 as next-generation GPU roadmaps mandate thermal rejection capabilities that exceed traditional air and basic cold-plate thresholds, pulling two-phase into selected hyperscale and AI-native colocation facilities.</p>
+        </section>
+
+        <section id="sec-3" class="mb-20 scroll-mt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 consulting-card p-6 order-2 lg:order-1">
+                    <div class="chart-container">
+                        <canvas id="chartRevenueLayer"></canvas>
+                    </div>
+                </div>
+                <div class="lg:col-span-1 order-1 lg:order-2">
+                    <h3 class="text-2xl font-bold text-rose-950 mb-4">3. Revenue Layer Split</h3>
+                    <p class="text-stone-700 mb-4">Market value structurally shifts from initial hardware capital expenditure toward lifecycle fluid management and recurring services.</p>
+                    <p class="text-stone-700 mb-4">Tank and enclosure hardware share compresses from 44% in 2025 to 38% in 2035 due to scale manufacturing. Conversely, the necessity for fluid testing, top-ups, and specialized maintenance expands the recurring service layer from 7% to 11%.</p>
+                </div>
+            </div>
+            <p class="insight-text">The strongest opportunity lies not just in metal fabrication, but in controlling the complex fluid ecosystem. For GRC, this highlights a critical competitive vector: positioning single-phase as a lower-risk, lower-OPEX fluid environment compared to boiling dielectric systems.</p>
+        </section>
+
+        <section id="sec-4" class="mb-20 scroll-mt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-bold text-rose-950 mb-4">4. Application Opportunity Split</h3>
+                    <p class="text-stone-700 mb-4">Deployment is highly asymmetric. Mainstream enterprise and edge environments present minimal opportunity due to infrastructure complexity, whereas high-density nodes are the primary engine.</p>
+                    <ul class="space-y-3 mt-6">
+                        <li class="flex items-start">
+                            <span class="text-rose-900 font-bold mr-2 mt-0.5">▪</span>
+                            <span class="text-sm text-stone-700"><strong>AI/HPC:</strong> Captures the vast majority of net-new demand.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-rose-900 font-bold mr-2 mt-0.5">▪</span>
+                            <span class="text-sm text-stone-700"><strong>Hyperscale:</strong> Selective adoption for bespoke, high-compute zones.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-2 consulting-card p-6">
+                    <div class="chart-container">
+                        <canvas id="chartApplications"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p class="insight-text">Two-phase systems are commercially viable almost exclusively where rack densities cross 100 kW. GRC can defend the vast 30–80 kW mid-density colocation/enterprise tier by emphasizing single-phase operational familiarity and sufficient thermal headroom.</p>
+        </section>
+
+        <section id="sec-5" class="mb-20 scroll-mt-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-rose-950 mb-2">5. Regional Opportunity Heatmap</h3>
+                <p class="text-stone-600">Geographic adoption follows AI data-center buildouts and regulatory tolerance for specialized fluorinated/dielectric fluids.</p>
+            </div>
+            <div class="consulting-card overflow-hidden">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Region</th>
+                            <th class="w-1/6 text-right">2025 Base</th>
+                            <th class="w-1/6 text-right">2035 Forecast</th>
+                            <th class="w-1/6 text-center">CAGR</th>
+                            <th class="w-1/4">Market Concentration (2035)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-stone-800">
+                        <tr>
+                            <td class="font-semibold">North America</td>
+                            <td class="text-right">USD $35.7 Mn</td>
+                            <td class="text-right font-bold">USD $537.5 Mn</td>
+                            <td class="text-center text-sm">31.1%</td>
+                            <td class="px-4 py-3">
+                                <div class="data-bar-bg"><div class="data-bar-fill" style="width: 43%;"></div></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Europe</td>
+                            <td class="text-right">USD $25.5 Mn</td>
+                            <td class="text-right">USD $350.0 Mn</td>
+                            <td class="text-center text-sm">29.9%</td>
+                            <td class="px-4 py-3">
+                                <div class="data-bar-bg"><div class="data-bar-fill" style="width: 28%;"></div></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Asia-Pacific</td>
+                            <td class="text-right">USD $17.0 Mn</td>
+                            <td class="text-right">USD $262.5 Mn</td>
+                            <td class="text-center text-sm">31.4%</td>
+                            <td class="px-4 py-3">
+                                <div class="data-bar-bg"><div class="data-bar-fill" style="width: 21%;"></div></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Middle East</td>
+                            <td class="text-right">USD $4.3 Mn</td>
+                            <td class="text-right">USD $75.0 Mn</td>
+                            <td class="text-center text-sm">33.1%</td>
+                            <td class="px-4 py-3">
+                                <div class="data-bar-bg"><div class="data-bar-fill" style="width: 6%;"></div></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Latin America</td>
+                            <td class="text-right">USD $2.6 Mn</td>
+                            <td class="text-right">USD $25.0 Mn</td>
+                            <td class="text-center text-sm">25.3%</td>
+                            <td class="px-4 py-3">
+                                <div class="data-bar-bg"><div class="data-bar-fill" style="width: 2%;"></div></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="insight-text">North America leads driven by hyperscale headquarters and AI funding. Europe's growth is substantial but faces friction from emerging fluid regulations, creating a specific opportunity for single-phase vendors to capitalize on fluid-safety narratives.</p>
+        </section>
+
+        <section id="sec-6" class="mb-20 scroll-mt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 consulting-card p-6 order-2 lg:order-1">
+                    <div class="chart-container">
+                        <canvas id="chartInstalledBase"></canvas>
+                    </div>
+                </div>
+                <div class="lg:col-span-1 order-1 lg:order-2">
+                    <h3 class="text-2xl font-bold text-rose-950 mb-4">6. Installed Base Momentum</h3>
+                    <p class="text-stone-700 mb-4">Initial deployment revenue is expanding rapidly, driving up the active installed base.</p>
+                    <p class="text-stone-700 mb-4">As manufacturing scales, average initial ASPs per rack-equivalent are projected to compress from approximately $42,000 in 2025 down to $34,000 by 2035, improving the TCO equation but requiring vendors to extract margin from lifecycle services.</p>
+                </div>
+            </div>
+            <p class="insight-text">Hardware commoditization is inevitable. Value will consolidate around the system integrators who can guarantee uptime and the fluid suppliers who control the complex boiling chemistry.</p>
+        </section>
+
+        <section id="sec-7" class="mb-20 scroll-mt-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-rose-950 mb-2">7. Architecture Benchmark</h3>
+                <p class="text-stone-600">Strategic evaluation of two-phase cooling against its primary substitutes: single-phase immersion and direct-to-chip (cold plate) cooling.</p>
+            </div>
+            <div class="consulting-card overflow-hidden">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Cooling Architecture</th>
+                            <th class="w-1/5 text-center">Density Ceiling</th>
+                            <th class="w-1/5 text-center">Serviceability Risk</th>
+                            <th class="w-1/5 text-center">Ecosystem Maturity</th>
+                            <th class="w-1/5">GRC Strategic Lever</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-stone-800">
+                        <tr>
+                            <td class="font-semibold text-rose-950 bg-rose-50">Two-Phase Immersion</td>
+                            <td class="text-center bg-rose-50">> 150 kW / rack</td>
+                            <td class="text-center font-bold text-rose-900 bg-rose-50">Very High</td>
+                            <td class="text-center bg-rose-50">Emerging</td>
+                            <td class="bg-rose-50 text-xs">Expose vapor-loss risks and complex fluid handling requirements.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Single-Phase Immersion</td>
+                            <td class="text-center">100 - 150 kW / rack</td>
+                            <td class="text-center">Low-Medium</td>
+                            <td class="text-center">Commercial</td>
+                            <td class="text-xs font-semibold text-amber-700">GRC Core Position: Emphasize operational simplicity and fluid safety.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Direct-to-Chip (DTC)</td>
+                            <td class="text-center">80 - 120 kW / rack</td>
+                            <td class="text-center">Medium</td>
+                            <td class="text-center font-bold text-emerald-700">Scaling Rapidly</td>
+                            <td class="text-xs">Position immersion as superior for overall facility heat capture.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="insight-text">Direct-to-chip is the strongest near-term substitute, absorbing mainstream AI liquid-cooling demand due to OEM alignment. Two-phase wins strictly on extreme performance. Single-phase occupies the strategic middle ground: balancing high density with practical maintainability.</p>
+        </section>
+
+        <section id="sec-8" class="mb-20 scroll-mt-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-rose-950 mb-2">8. Adoption Barrier Scorecard</h3>
+                <p class="text-stone-600">Quantification of commercial headwinds restricting two-phase market penetration.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="consulting-card p-5">
+                    <div class="flex justify-between items-end mb-2">
+                        <div class="font-semibold text-stone-900">Fluid Cost & Chemistry</div>
+                        <div class="text-lg font-bold text-rose-900">High Severity</div>
+                    </div>
+                    <div class="data-bar-bg mb-2"><div class="data-bar-fill bg-rose-900" style="width: 85%;"></div></div>
+                    <p class="text-xs text-stone-600">High initial CAPEX for specialized boiling fluids and ongoing OPEX for vapor recovery and top-ups.</p>
+                </div>
+                <div class="consulting-card p-5">
+                    <div class="flex justify-between items-end mb-2">
+                        <div class="font-semibold text-stone-900">Serviceability & Operations</div>
+                        <div class="text-lg font-bold text-rose-900">High Severity</div>
+                    </div>
+                    <div class="data-bar-bg mb-2"><div class="data-bar-fill bg-rose-700" style="width: 80%;"></div></div>
+                    <p class="text-xs text-stone-600">Requires facility operators to manage sealed, pressurized systems, drastically altering IT maintenance workflows.</p>
+                </div>
+                <div class="consulting-card p-5">
+                    <div class="flex justify-between items-end mb-2">
+                        <div class="font-semibold text-stone-900">Environmental Scrutiny</div>
+                        <div class="text-lg font-bold text-rose-900">High Severity</div>
+                    </div>
+                    <div class="data-bar-bg mb-2"><div class="data-bar-fill bg-rose-800" style="width: 75%;"></div></div>
+                    <p class="text-xs text-stone-600">Regulatory pressure on PFAS and fluorinated fluids poses a structural risk to long-term supply chains.</p>
+                </div>
+                <div class="consulting-card p-5">
+                    <div class="flex justify-between items-end mb-2">
+                        <div class="font-semibold text-stone-900">OEM Compatibility</div>
+                        <div class="text-lg font-bold text-amber-600">Medium Severity</div>
+                    </div>
+                    <div class="data-bar-bg mb-2"><div class="data-bar-fill bg-amber-500" style="width: 55%;"></div></div>
+                    <p class="text-xs text-stone-600">Gradual improvement, but server OEMs prioritize cold-plate designs for mass-market AI architectures.</p>
+                </div>
+            </div>
+            <p class="insight-text">Adoption will depend entirely on resolving these friction points. GRC’s go-to-market strategy must aggressively target the "Serviceability" and "Fluid Cost" vectors, providing commercial clarity where two-phase currently offers complexity.</p>
+        </section>
+
+        <section id="sec-9" class="mb-20 scroll-mt-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-rose-950 mb-2">9. Value Chain and Profit Pool Analysis</h3>
+                <p class="text-stone-600">Deconstructing strategic control and monetization across the deployment lifecycle.</p>
+            </div>
+            <div class="consulting-card overflow-hidden">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Value Chain Layer</th>
+                            <th class="w-1/4">Revenue Type</th>
+                            <th class="w-1/4 text-center">Strategic Control</th>
+                            <th class="w-1/4">Commercial Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-stone-800">
+                        <tr>
+                            <td class="font-semibold">Tank / System OEM</td>
+                            <td>One-time hardware</td>
+                            <td class="text-center font-bold text-stone-900">High</td>
+                            <td class="text-xs text-stone-600">Controls the primary sale, but faces long-term margin pressure from scale hardware fabrication.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Dielectric Fluid Supplier</td>
+                            <td>Initial + recurring</td>
+                            <td class="text-center font-bold text-rose-900">High</td>
+                            <td class="text-xs text-stone-600">Highly concentrated power; extracts substantial margin due to specialized chemical requirements.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Controls / Monitoring</td>
+                            <td>Hardware + service</td>
+                            <td class="text-center font-semibold text-stone-700">Medium-High</td>
+                            <td class="text-xs text-stone-600">Critical for vapor management; high lock-in potential for predictive analytics.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Maintenance Provider</td>
+                            <td>Recurring service</td>
+                            <td class="text-center font-bold text-rose-900">High</td>
+                            <td class="text-xs text-stone-600">Capitalizes on the operational complexity of boiling systems; high lifetime value.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="insight-text">Hardware OEMs must attach lifecycle services to maintain profitability. If two-phase systems fail to demonstrate clear TCO advantage inclusive of recurring fluid management, buyer preference will revert to direct-to-chip.</p>
+        </section>
+
+        <section id="sec-10" class="mb-20 scroll-mt-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-rose-950 mb-2">10. Competitive Landscape & Capability Benchmark</h3>
+                <p class="text-stone-600">Positioning matrix delineating direct two-phase threats from adjacent single-phase peers and substitutes.</p>
+            </div>
+            <div class="consulting-card overflow-hidden">
+                <table class="w-full">
+                    <thead>
+                        <tr>
+                            <th class="w-1/4">Competitor Category</th>
+                            <th class="w-1/4">Primary Focus</th>
+                            <th class="w-1/4 text-center">Market Relevance</th>
+                            <th class="w-1/4">Relevance to GRC</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-stone-800">
+                        <tr class="bg-rose-50 border-l-4 border-l-rose-900">
+                            <td class="font-bold text-rose-950">GRC</td>
+                            <td>Single-Phase Immersion</td>
+                            <td class="text-center font-bold">Commercial Baseline</td>
+                            <td class="text-xs font-semibold">Primary Benchmark; leverages operational simplicity.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Submer / Asperitas</td>
+                            <td>Single-Phase Immersion</td>
+                            <td class="text-center">Commercial Peer</td>
+                            <td class="text-xs">Direct single-phase competition; shared narrative against two-phase complexity.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">LiquidStack</td>
+                            <td>Dual Immersion Exposure</td>
+                            <td class="text-center font-semibold">High</td>
+                            <td class="text-xs">Bridges both technologies; direct competitive threat in high-density bids.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Two-Phase Specialists</td>
+                            <td>Two-Phase Only</td>
+                            <td class="text-center">Emerging Threat</td>
+                            <td class="text-xs">Technology threat in >100kW environments; vulnerable on serviceability.</td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold">Direct-to-Chip Group</td>
+                            <td>Cold Plates / CDUs</td>
+                            <td class="text-center font-bold text-stone-900">Scaling (Major Substitute)</td>
+                            <td class="text-xs">The immediate market obstacle; absorbs mainstream liquid cooling budgets.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="insight-text">GRC should separate its competitive narrative: position single-phase as the logical evolution from air cooling, and frame two-phase as a niche, high-risk architecture for edge-case densities.</p>
+        </section>
+
+        <section id="sec-11" class="mb-20 scroll-mt-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-1">
+                    <h3 class="text-2xl font-bold text-rose-950 mb-4">11. Scenario Forecast</h3>
+                    <p class="text-stone-700 mb-4">Market sensitivity remains high. Select a scenario below to view the trajectory impact driven by AI density needs versus direct-to-chip substitution.</p>
+                    
+                    <div class="space-y-3 mt-6">
+                        <button onclick="updateScenario('base')" id="btn-base" class="w-full text-left px-4 py-3 rounded border border-rose-900 bg-rose-900 text-white font-semibold transition-all">
+                            Base Case (USD $1.25 Bn)
+                            <div class="text-xs font-normal text-rose-200 mt-1">Balanced adoption in targeted AI clusters.</div>
+                        </button>
+                        <button onclick="updateScenario('upside')" id="btn-upside" class="w-full text-left px-4 py-3 rounded border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 font-semibold transition-all">
+                            Upside (USD $1.55 Bn)
+                            <div class="text-xs font-normal text-stone-500 mt-1">Accelerated AI/HPC high-density demand.</div>
+                        </button>
+                        <button onclick="updateScenario('conservative')" id="btn-conservative" class="w-full text-left px-4 py-3 rounded border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 font-semibold transition-all">
+                            Conservative (USD $800 Mn)
+                            <div class="text-xs font-normal text-stone-500 mt-1">Direct-to-chip absorbs mainstream AI budgets.</div>
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 consulting-card p-6">
+                    <div class="chart-container">
+                        <canvas id="chartScenarios"></canvas>
+                    </div>
+                </div>
+            </div>
+            <p class="insight-text">The variance between scenarios is dictated not by technical capability, but by procurement ease. If OEMs successfully standardize cold plates for next-gen GPUs, two-phase upside will be structurally capped.</p>
+        </section>
+
+        <section id="sec-12" class="mt-24 mb-10">
+            <div class="bg-rose-950 rounded-xl p-8 md:p-12 text-center shadow-xl">
+                <h2 class="text-3xl font-bold text-white mb-4">Strategic Intelligence Awaits</h2>
+                <p class="text-rose-200 text-lg max-w-2xl mx-auto mb-8">
+                    This sample outlines the foundational narrative. The full 65-page report contains granular segmentations, un-redacted capability scoring, proprietary pricing economics, and a strategic action playbook specifically calibrated for GRC's market defense and expansion.
+                </p>
+                <div class="inline-block bg-white rounded shadow-lg p-6">
+                    <div class="text-stone-900 font-bold mb-2 uppercase tracking-wide text-sm">To order the full report, email:</div>
+                    <a href="mailto:info@strategicmarketresearch.com" class="text-xl font-bold text-rose-900 hover:text-rose-700 transition-colors border-b-2 border-rose-900 pb-1">info@strategicmarketresearch.com</a>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="border-t border-stone-200 pt-6 text-center text-sm text-stone-500">
+            &copy; 2026 Strategic Market Research. Confidential Sample for GRC.
+        </footer>
+    </main>
+
+    <script>
+        // --- State Management & Data ---
+        const years = ['2025', '2026', '2027', '2028', '2029', '2030', '2031', '2032', '2033', '2034', '2035'];
+        
+        const marketSizeData = [85, 116.4, 159.5, 218.5, 299.3, 410, 512.4, 640.4, 800.3, 1000.2, 1250];
+        
+        const layersData = {
+            hardware: [37.4, 50.1, 67.0, 89.6, 120.3, 168.1, 204.9, 249.7, 304.1, 370.0, 475.0], // 44% -> 38%
+            fluid: [15.3, 21.0, 29.5, 41.5, 56.9, 77.9, 99.9, 128.0, 160.0, 200.0, 250.0], // 18% -> 20%
+            condenser: [11.0, 15.1, 20.7, 28.4, 38.9, 53.3, 66.6, 83.2, 104.0, 130.0, 162.5], // 13% static
+            controls: [5.1, 7.6, 10.4, 15.3, 22.4, 28.7, 38.4, 51.2, 64.0, 80.0, 100.0], // 6% -> 8%
+            integration: [10.2, 13.4, 18.3, 24.0, 31.4, 45.1, 53.8, 64.0, 80.0, 100.0, 125.0], // 12% -> 10%
+            service: [6.0, 9.2, 13.6, 19.7, 29.4, 36.9, 48.8, 64.3, 88.2, 120.2, 137.5] // 7% -> 11%
+        };
+
+        const applicationsData = [487.5, 375.0, 200.0, 87.5, 50.0, 50.0]; 
+        const applicationLabels = ['AI / HPC', 'Hyperscale Cloud', 'Colocation', 'Enterprise', 'Edge / Telecom', 'High-Load Specialist'];
+
+        const baseUnits = [1882, 2776, 4008, 5644, 7850, 11050, 13900, 17500, 22000, 28000, 33455];
+        const baseASP = [42.0, 41.5, 40.8, 40.1, 39.4, 38.5, 37.5, 36.6, 35.7, 34.8, 34.0];
+
+        const scenarios = {
+            base: [85, 116.4, 159.5, 218.5, 299.3, 410, 512.4, 640.4, 800.3, 1000.2, 1250],
+            upside: [85, 125.0, 180.0, 250.0, 350.0, 480.0, 620.0, 800.0, 1000.0, 1250.0, 1550],
+            conservative: [55, 75.6, 103.9, 142.8, 196.4, 270, 335.5, 416.9, 518.0, 643.7, 800]
+        };
+
+        // --- Common Chart Configuration ---
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#57534e';
+        const tooltipConfig = {
+            backgroundColor: '#1c1917',
+            titleFont: { size: 13, weight: 'bold' },
+            bodyFont: { size: 12 },
+            padding: 10,
+            cornerRadius: 4,
+            displayColors: true
+        };
+
+        // --- Initialize Charts ---
+        let chartScenariosInstance = null;
+
+        function initCharts() {
+            // 2. Market Size Chart
+            const ctxMarket = document.getElementById('chartMarketSize').getContext('2d');
+            new Chart(ctxMarket, {
+                type: 'bar',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Market Revenue (USD $Mn)',
+                        data: marketSizeData,
+                        backgroundColor: '#881337',
+                        borderRadius: 4,
+                        barPercentage: 0.7
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: tooltipConfig
+                    },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: '#e7e5e4' }, ticks: { callback: function(value) { return '$' + value; } } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 3. Revenue Layer Split
+            const ctxLayer = document.getElementById('chartRevenueLayer').getContext('2d');
+            new Chart(ctxLayer, {
+                type: 'bar',
+                data: {
+                    labels: ['2025', '2027', '2030', '2032', '2035'],
+                    datasets: [
+                        { label: 'Hardware', data: [layersData.hardware[0], layersData.hardware[2], layersData.hardware[5], layersData.hardware[7], layersData.hardware[10]], backgroundColor: '#44403c' },
+                        { label: 'Fluid', data: [layersData.fluid[0], layersData.fluid[2], layersData.fluid[5], layersData.fluid[7], layersData.fluid[10]], backgroundColor: '#881337' },
+                        { label: 'Condenser', data: [layersData.condenser[0], layersData.condenser[2], layersData.condenser[5], layersData.condenser[7], layersData.condenser[10]], backgroundColor: '#a8a29e' },
+                        { label: 'Controls', data: [layersData.controls[0], layersData.controls[2], layersData.controls[5], layersData.controls[7], layersData.controls[10]], backgroundColor: '#d6d3d1' },
+                        { label: 'Integration', data: [layersData.integration[0], layersData.integration[2], layersData.integration[5], layersData.integration[7], layersData.integration[10]], backgroundColor: '#b45309' },
+                        { label: 'Service (Recurring)', data: [layersData.service[0], layersData.service[2], layersData.service[5], layersData.service[7], layersData.service[10]], backgroundColor: '#f59e0b' }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { stacked: true, grid: { display: false } },
+                        y: { stacked: true, grid: { color: '#e7e5e4' } }
+                    },
+                    plugins: {
+                        legend: { position: 'bottom', labels: { boxWidth: 12, padding: 15 } },
+                        tooltip: tooltipConfig
+                    }
+                }
+            });
+
+            // 4. Applications Split
+            const ctxApps = document.getElementById('chartApplications').getContext('2d');
+            new Chart(ctxApps, {
+                type: 'bar',
+                data: {
+                    labels: applicationLabels,
+                    datasets: [{
+                        label: '2035 Revenue (USD $Mn)',
+                        data: applicationsData,
+                        backgroundColor: ['#881337', '#9f1239', '#be123c', '#e11d48', '#f43f5e', '#fb7185'],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: tooltipConfig
+                    },
+                    scales: {
+                        x: { grid: { color: '#e7e5e4' } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 6. Installed Base Momentum
+            const ctxInst = document.getElementById('chartInstalledBase').getContext('2d');
+            new Chart(ctxInst, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'Average System ASP ($000)',
+                            data: baseASP,
+                            borderColor: '#f59e0b',
+                            backgroundColor: '#f59e0b',
+                            type: 'line',
+                            yAxisID: 'y1',
+                            tension: 0.3,
+                            borderWidth: 3
+                        },
+                        {
+                            label: 'Annual Deployed Units',
+                            data: baseUnits,
+                            backgroundColor: '#e7e5e4',
+                            type: 'bar',
+                            yAxisID: 'y',
+                            borderRadius: 4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: { tooltip: tooltipConfig, legend: { position: 'bottom' } },
+                    scales: {
+                        y: { 
+                            type: 'linear', display: true, position: 'left', 
+                            title: { display: true, text: 'Units Deployed' },
+                            grid: { display: false }
+                        },
+                        y1: { 
+                            type: 'linear', display: true, position: 'right', 
+                            title: { display: true, text: 'ASP (USD $000)' },
+                            grid: { display: false },
+                            min: 30
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 11. Scenarios
+            const ctxScen = document.getElementById('chartScenarios').getContext('2d');
+            chartScenariosInstance = new Chart(ctxScen, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Base Case (USD $Mn)',
+                        data: scenarios.base,
+                        borderColor: '#881337',
+                        backgroundColor: 'rgba(136, 19, 55, 0.1)',
+                        fill: true,
+                        tension: 0.4,
+                        borderWidth: 3,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: tooltipConfig },
+                    scales: {
+                        y: { grid: { color: '#e7e5e4' }, min: 0 },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        // --- Interaction Logic ---
+        function updateScenario(type) {
+            // Update UI buttons
+            const btns = ['base', 'upside', 'conservative'];
+            btns.forEach(b => {
+                const el = document.getElementById('btn-' + b);
+                if(b === type) {
+                    el.className = "w-full text-left px-4 py-3 rounded border border-rose-900 bg-rose-900 text-white font-semibold transition-all";
+                    el.children[0].className = "text-xs font-normal text-rose-200 mt-1";
+                } else {
+                    el.className = "w-full text-left px-4 py-3 rounded border border-stone-300 bg-white text-stone-700 hover:bg-stone-50 font-semibold transition-all";
+                    el.children[0].className = "text-xs font-normal text-stone-500 mt-1";
+                }
+            });
+
+            // Update Chart
+            if(chartScenariosInstance) {
+                chartScenariosInstance.data.datasets[0].data = scenarios[type];
+                
+                let label, color, bgColor;
+                if(type === 'base') { label = 'Base Case'; color = '#881337'; bgColor = 'rgba(136, 19, 55, 0.1)'; }
+                if(type === 'upside') { label = 'Upside Scenario'; color = '#047857'; bgColor = 'rgba(4, 120, 87, 0.1)'; }
+                if(type === 'conservative') { label = 'Conservative Scenario'; color = '#b45309'; bgColor = 'rgba(180, 83, 9, 0.1)'; }
+                
+                chartScenariosInstance.data.datasets[0].label = label + ' (USD $Mn)';
+                chartScenariosInstance.data.datasets[0].borderColor = color;
+                chartScenariosInstance.data.datasets[0].backgroundColor = bgColor;
+                chartScenariosInstance.update();
+            }
+        }
+
+        // Navigation Highlight Logic
+        const sections = document.querySelectorAll("section[id^='sec-']");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 150)) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current) && current !== "") {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', initCharts);
+
+    </script>
+</body>
+</html>
